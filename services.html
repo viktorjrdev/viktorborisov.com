@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Compliance & Law | Services & Methodology</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-accent: #151515;
+            --accent: #c5a059;
+            --accent-dim: rgba(197, 160, 89, 0.4);
+            --text-main: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 10rem 10% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 80vh;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            animation: reveal 1s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 4rem;
+            animation: reveal 1s 0.3s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .methodology-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .service-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            background: var(--bg-accent);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 4rem;
+            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .service-block:hover {
+            border-color: var(--accent-dim);
+            transform: scale(1.01);
+        }
+
+        .service-block:nth-child(even) {
+            grid-template-columns: 1fr 1fr;
+            direction: rtl; /* Flip layout horizontally */
+        }
+
+        .service-block:nth-child(even) > * {
+            direction: ltr; /* Reset text direction inside */
+        }
+
+        /* Decorative Numbering */
+        .service-num {
+            position: absolute;
+            top: -20px;
+            right: 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 12rem;
+            color: rgba(255, 255, 255, 0.02);
+            font-weight: 700;
+            line-height: 1;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .service-block:nth-child(even) .service-num {
+             left: 0;
+             right: auto;
+        }
+
+        .service-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .service-lead {
+           font-size: 1.1rem;
+           color: var(--text-main);
+           font-weight: 600;
+           margin-bottom: 1.5rem;
+        }
+
+        .service-desc {
+            font-size: 1rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .phase-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .phase-list li {
+            background: var(--glass);
+            padding: 1rem 1.5rem;
+            border-left: 3px solid var(--accent);
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            transition: var(--transition);
+        }
+        
+        .phase-list li:hover {
+            background: rgba(197, 160, 89, 0.05);
+            color: var(--text-main);
+            transform: translateX(10px);
+        }
+
+        .phase-list li strong {
+            color: var(--text-main);
+            display: block;
+            margin-bottom: 0.2rem;
+            font-family: 'Inter', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 10%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            clear: both;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-dim);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Scroll Animation Class */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .service-block, .service-block:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                direction: ltr; /* Reset for mobile */
+            }
+            .service-block {
+                padding: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-links {
+                gap: 1.5rem;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html" class="active">Services</a>
+            <a href="faq.html">FAQ</a>
+            <a href="customers.html">Customers</a>
+        </div>
+    </nav>
+
+    <section class="services-section">
+        <h1 class="section-title">Strategic Expertise</h1>
+        <p class="section-subtitle">The Geometry of Absolute Compliance.</p>
+        
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto; color: var(--text-dim); font-size: 1.1rem; line-height: 1.8;" class="scroll-reveal">
+            I do not provide theoretical overviews; I engineer deployable legal structures. Below is a detailed breakdown of how each core methodology is executed from inception to certification.
+        </div>
+
+        <div class="methodology-grid">
+            
+            <!-- Service 1 -->
+            <div class="service-block scroll-reveal">
+                <div class="service-num">01</div>
+                <div class="service-content">
+                    <h2 class="service-title">ISO 27001 Internal Audit</h2>
+                    <p class="service-lead">Validating the integrity of Information Security Management Systems (ISMS).</p>
+                    <p class="service-desc">Achieving ISO 27001 is a grueling gauntlet. I conduct hyper-rigorous internal audits designed to aggressively uncover non-conformities *before* the external certification body does. The result is a seamless final audit and an impenetrable data defense network.</p>
+                </div>
+                <ul class="phase-list">
+                    <li><strong>Phase I: The Gap Assessment</strong>Mapping your current infrastructure against the Annex A controls.</li>
+                    <li><strong>Phase II: Critical Penetration</strong>Simulating risk to expose documentation and operational flaws.</li>
+                    <li><strong>Phase III: Board-Level Reporting</strong>Delivering an actionable matrix for immediate executive remediation.</li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-block scroll-reveal">
+                <div class="service-num">02</div>
+                <div class="service-content">
+                    <h2 class="service-title">Policy Architecture & SOPs</h2>
+                    <p class="service-lead">Drafting the algorithmic foundation of corporate governance.</p>
+                    <p class="service-desc">Regulatory compliance fails when policies are written but not executed. I architect Standard Operating Procedures (SOPs) that translate complex multinational laws into explicit, executable steps for your lower-level workforce.</p>
+                </div>
+                <ul class="phase-list">
+                    <li><strong>Phase I: Regulatory Mapping</strong>Isolating applicable cross-border jurisdictional requirements.</li>
+                    <li><strong>Phase II: Framework Drafting</strong>Writing airtight policies (e.g., AML, KYC, GDPR, Data Retention).</li>
+                    <li><strong>Phase III: Operationalization</strong>Converting legal text into rigid step-by-step procedures for staff.</li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-block scroll-reveal">
+                <div class="service-num">03</div>
+                <div class="service-content">
+                    <h2 class="service-title">High-Conflict Mediation</h2>
+                    <p class="service-lead">Neutralizing destructive institutional disputes.</p>
+                    <p class="service-desc">Litigation is public, expensive, and protracted. Certified Mediation is confidential, efficient, and precise. I deploy strategic outcome-mapping to de-escalate emotional warfare between partners, executives, or B2B actors.</p>
+                </div>
+                <ul class="phase-list">
+                    <li><strong>Phase I: Forensic Fact-Finding</strong>Extracting objective truths from emotional narratives.</li>
+                    <li><strong>Phase II: Interest Decoupling</strong>Isolating the personal grievances from the financial necessities.</li>
+                    <li><strong>Phase III: Binding Resolution</strong>Drafting the final, legally binding settlement agreement.</li>
+                </ul>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="service-block scroll-reveal">
+                <div class="service-num">04</div>
+                <div class="service-content">
+                    <h2 class="service-title">Administrative Legal Advocacy</h2>
+                    <p class="service-lead">Wielding the law against bureaucratic inertia.</p>
+                    <p class="service-desc">When government agencies or institutional oversight bodies step over the line or fail to act, aggressive documentation is required. I draft dense, intimidating, and procedurally flawless administrative complaints to force action and protect corporate interests.</p>
+                </div>
+                <ul class="phase-list">
+                    <li><strong>Phase I: Procedural Exploitation</strong>Analyzing the target agency's own bylaws for leverage points.</li>
+                    <li><strong>Phase II: Substantive Drafting</strong>Constructing the multi-page complaint with undeniable evidentiary backing.</li>
+                    <li><strong>Phase III: Escalation Strategy</strong>Managing the appellate process until standard procedures are rectified.</li>
+                </ul>
+            </div>
+
+        </div>
+        
+        <div style="text-align: center; margin-top: 5rem;" class="scroll-reveal">
+            <a href="index.html#contact-form" style="display: inline-block; padding: 1.2rem 3rem; background: var(--accent); color: #000; text-decoration: none; text-transform: uppercase; font-weight: 700; letter-spacing: 2px; transition: var(--transition);">Engage Services</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="gdpr.html">GDPR</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/viktor-borisov" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="copyright">
+                © 2026 | Viktor Borisov | COMPLIANCE & LEGAL STRATEGY | BUILT FOR INTEGRITY
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

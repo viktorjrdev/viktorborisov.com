@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Compliance & Law | Clientele</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #0a0a0a;
+            --bg-accent: #151515;
+            --accent: #c5a059;
+            --text-main: #e0e0e0;
+            --text-dim: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 10%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: var(--transition);
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--accent);
+        }
+
+        /* Clientele Section */
+        .clientele-section {
+            padding: 10rem 10% 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 80vh;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+            animation: reveal 1s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 4rem;
+            animation: reveal 1s 0.3s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes reveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .client-card {
+            background: var(--glass);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 4px;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Subtle glow effect on hover */
+        .client-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(197, 160, 89, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 0;
+        }
+
+        .client-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+        }
+        
+        .client-card:hover::before {
+            opacity: 1;
+        }
+
+        .client-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .client-sector {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .client-desc {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            line-height: 1.6;
+        }
+        
+        .client-metric {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 4rem 10%;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            clear: both;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .social-links a {
+            color: var(--text-dim);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #444;
+            letter-spacing: 1px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        /* Scroll Animation Class */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .footer-links {
+                gap: 1.5rem;
+            }
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="faq.html">FAQ</a>
+            <a href="customers.html" class="active">Customers</a>
+        </div>
+    </nav>
+
+    <section class="clientele-section">
+        <h1 class="section-title">Professional Engagements</h1>
+        <p class="section-subtitle">Confidential Partnerships. Absolute Integrity.</p>
+        
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 4rem auto; color: var(--text-dim); font-size: 1.1rem; line-height: 1.8;" class="scroll-reveal">
+            As a professional in compliance, information security, and legal strategy, I maintain strict confidentiality regarding all engagements. Below is an overview of the sectors I've actively supported over the past five years.
+        </div>
+
+        <div class="grid">
+            <!-- Client 1 -->
+            <div class="client-card scroll-reveal">
+                <div class="client-content">
+                    <h3 class="client-sector">Financial <br> Institutions</h3>
+                    <p class="client-desc">Supported the development of KYC frameworks and assisted with FinCrime compliance reviews to ensure alignment with current regulatory standards.</p>
+                    <div class="client-metric">Successful Audit Support</div>
+                </div>
+            </div>
+
+            <!-- Client 2 -->
+            <div class="client-card scroll-reveal">
+                <div class="client-content">
+                    <h3 class="client-sector">FinTech <br> Startups</h3>
+                    <p class="client-desc">Drafted foundational Standard Operating Procedures (SOPs) and provided compliance support for emerging financial technology platforms navigating new markets.</p>
+                    <div class="client-metric">Regulatory Framework Implementation</div>
+                </div>
+            </div>
+
+            <!-- Client 3 -->
+            <div class="client-card scroll-reveal">
+                <div class="client-content">
+                    <h3 class="client-sector">OSINT & <br> Research</h3>
+                    <p class="client-desc">Leveraged advanced open-source intelligence (OSINT) methodologies and custom research tools to conduct detailed due diligence and risk assessments.</p>
+                    <div class="client-metric">Comprehensive Intelligence Reporting</div>
+                </div>
+            </div>
+
+            <!-- Client 4 -->
+            <div class="client-card scroll-reveal">
+                <div class="client-content">
+                    <h3 class="client-sector">Corporate <br> Clients</h3>
+                    <p class="client-desc">Assisted in drafting modernized Corporate Governance frameworks and supported structured mediation processes for internal dispute resolution.</p>
+                    <div class="client-metric">Governance Policy Deployment</div>
+                </div>
+            </div>
+            
+            <!-- Client 5: Public Sector Contractors -->
+             <div class="client-card scroll-reveal">
+                <div class="client-content">
+                    <h3 class="client-sector">Regulated <br> Contractors</h3>
+                    <p class="client-desc">Provided compliance documentation support and drafted administrative policies for organizations interfacing with regulatory oversight bodies.</p>
+                    <div class="client-metric">Sustained Compliance Alignment</div>
+                </div>
+            </div>
+
+            <!-- Client 6: Mediation -->
+            <div class="client-card scroll-reveal">
+                <div class="client-content">
+                    <h3 class="client-sector">Dispute <br> Resolution</h3>
+                    <p class="client-desc">Facilitated confidential, high-stakes mediation for corporate entities, decoupling emotional grievances from financial objectives to prevent protracted litigation.</p>
+                    <div class="client-metric">Certified Mediation Tactics</div>
+                </div>
+            </div>
+            
+             <!-- Client 6 -->
+             <div class="client-card scroll-reveal" style="border-color: rgba(197, 160, 89, 0.3);">
+                <div class="client-content">
+                    <h3 class="client-sector" style="color: var(--text-main);">Your Organization</h3>
+                    <p class="client-desc" style="margin-bottom: 2rem;">Are you navigating regulatory challenges or requiring specialized compliance and research support?</p>
+                    <a href="index.html#contact-form-section" style="display: inline-block; padding: 0.8rem 1.5rem; background: var(--accent); color: #000; text-decoration: none; text-transform: uppercase; font-weight: 700; letter-spacing: 1px; font-size: 0.8rem; transition: var(--transition);">Contact Me</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="gdpr.html">GDPR</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/viktor-borisov" target="_blank" rel="noopener noreferrer"
+                    aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="copyright">
+                © 2026 | Viktor Borisov | COMPLIANCE & LEGAL STRATEGY | BUILT FOR INTEGRITY
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll Reveal Logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
