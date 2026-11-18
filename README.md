@@ -1,2 +1,0 @@
-# viktorborisov.com
-Personal website
