@@ -1,0 +1,24 @@
+/* Glass effect for the Courses and Documents pages + the matching homepage sections */
+body { background:
+  radial-gradient(600px 420px at 12% 18%, rgba(201,169,97,.28), transparent 70%),
+  radial-gradient(700px 500px at 88% 55%, rgba(70,110,190,.30), transparent 70%),
+  radial-gradient(520px 380px at 40% 95%, rgba(176,141,67,.22), transparent 70%),
+  #0E1218; background-attachment: fixed; }
+.course-card, .doc {
+  position: relative; overflow: hidden;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.16);
+  backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%);
+  box-shadow: 0 24px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.12);
+}
+.course-card::before, .doc::before {
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background: linear-gradient(135deg, rgba(255,255,255,.14), transparent 45%);
+}
+.course-card > *, .doc > * { position: relative; }
+.doc-cover img { transition: transform .5s ease; }
+.doc-cover:hover img { transform: scale(1.06); }
+.tags li { background: rgba(255,255,255,.06); }
+
+@media (prefers-reduced-motion: reduce) { .doc-cover img { transition: none; } }
+@media (max-width: 600px) { body { background-attachment: scroll; } }
