@@ -1,1 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Courses — Viktor Borisov</title>
+<meta name="description" content="Free, self-paced courses on compliance and information security by Viktor Borisov.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect x=%2730%27 y=%2730%27 width=%2740%27 height=%2740%27 fill=%27%23C9A961%27 transform=%27rotate(45 50 50)%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<link rel="stylesheet" href="../assets/nav.css">
+<link rel="stylesheet" href="../assets/glass.css">
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <a href="../#top" class="nav-brand">
+    <span class="dot"></span>
+    Viktor Borisov
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="../#about">About</a></li>
+    <li><a href="../#experience">Experience</a></li>
+    <li><a href="../#education">Education</a></li>
+    <li><a href="../#expertise">Expertise</a></li>
+    <li class="nav-drop">
+      <a href="../courses/" class="drop-trigger" aria-haspopup="true" aria-expanded="false" aria-current="page">Courses</a>
+      <div class="drop-panel">
+        <div class="drop-inner">
+          <!-- Add new courses here (one <a class="drop-item"> per course) -->
+          <a href="../soc2-course/" class="drop-item"><b>SOC 2: From Beginner to Pro</b><span>17 lessons, final exam, certificate</span></a>
+          <a href="../courses/" class="drop-all">All courses</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="../documents/">Documents</a></li>
+  </ul>
+  <div class="nav-right">
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="nav-links"><span class="bars" aria-hidden="true"></span>Menu</button>
+    <a href="../#contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
 
+<main>
+  <header class="page-head">
+    <div class="container">
+      <div class="section-meta"><span class="dot"></span><span><a href="../">Home</a> / Courses</span></div>
+      <h1 class="page-title">Free <em>courses</em></h1>
+      <p class="page-lede">Self-paced courses on compliance and information security. Each one runs in your browser, needs no sign-up, and ends with a certificate of completion in your name.</p>
+    </div>
+  </header>
+
+  <section class="container listing" aria-label="Courses">
+
+    <!-- ===== COURSE: SOC 2 =====
+         To add a course: copy this whole <article> block, change the text and the link,
+         and add the same course to the dropdown in the <nav> on every page. -->
+    <article class="course-card">
+      <div>
+        <p class="kicker">Information security · AICPA Trust Services Criteria</p>
+        <h2>SOC 2: From Beginner to Pro</h2>
+        <p>From what an attestation report actually is to scoping, control design, audit evidence, reviewing vendor reports and mapping to ISO/IEC 27001. Finish every lesson and pass the final exam to download a certificate of completion.</p>
+        <div class="actions"><a href="../soc2-course/" class="btn btn-gold">Start the course</a></div>
+      </div>
+      <ul class="facts">
+        <li><span>Lessons</span><b>17 in four levels</b></li>
+        <li><span>Assessment</span><b>Lesson quizzes and final exam</b></li>
+        <li><span>Pass mark</span><b>80%</b></li>
+        <li><span>Certificate</span><b>PDF or PNG, on completion</b></li>
+        <li><span>Cost</span><b>Free, no sign-up</b></li>
+      </ul>
+    </article>
+    <!-- ===== /COURSE ===== -->
+
+    <p class="note">Your name and progress are saved only in your own browser. Nothing is sent to a server.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>© MMXXVI · Viktor Borisov</div>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/nav.js"></script>
+</body>
+</html>
